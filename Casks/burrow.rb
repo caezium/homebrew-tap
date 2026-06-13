@@ -7,8 +7,8 @@
 #   brew install --cask caezium/tap/burrow
 #
 cask "burrow" do
-  version "0.6.7"
-  sha256 "cb78b43e289e9c7bbfec7af4ae95a5728f995f27d31a3790c8326f99150adc4e"
+  version "0.7.0"
+  sha256 "51acefd9e580ddd1acd0fa60c8e1e9d69c43c7423bc53d93c15c012eef173b6e"
 
   url "https://github.com/caezium/Burrow/releases/download/v#{version}/Burrow-#{version}.zip"
   name "Burrow"
