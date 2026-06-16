@@ -14,6 +14,7 @@ brew install --cask caezium/tap/<name>
 |---|---|
 | [`wisp`](https://github.com/caezium/wisp) | On-device inline AI autocomplete for any macOS text field |
 | [`burrow`](https://github.com/caezium/Burrow) | Native macOS GUI for the Mole (`mo`) CLI |
+| [`nib`](https://github.com/caezium/nib) | Hand-drawn editorial illustrations starring your own character |
 
 Update or remove any app the usual way:
 
