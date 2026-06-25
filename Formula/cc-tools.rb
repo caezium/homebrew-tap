@@ -1,8 +1,8 @@
 class CcTools < Formula
   desc "Power-user CLI tools for Claude Code: cc-session + ccron"
   homepage "https://github.com/caezium/cc-tools"
-  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "25d5b54230b0c5425a39e1dfb4ce481f496d288987a106ceca85c8fbfa01ee8a"
+  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "2a4e1a74624035680919a023ec682e37014857b11900beb4d0d2459c2dcd14b0"
   license "MIT"
 
   depends_on "tmux" # cc-session runs the Claude TUI inside tmux
