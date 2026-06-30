@@ -7,8 +7,8 @@
 #   brew install --cask caezium/tap/nib
 #
 cask "nib" do
-  version "0.2.0"
-  sha256 "ce8391b75f865360399f29a3ac8d7ecb8da5e259eaf09a98706ee8e8f297f320"
+  version "0.2.1"
+  sha256 "d51ff83968a2534d0f1cb1643017e4c7e094c6b58d707a70f50d4d90001ff72f"
 
   url "https://github.com/caezium/nib/releases/download/v#{version}/Nib-#{version}.zip"
   name "Nib"
