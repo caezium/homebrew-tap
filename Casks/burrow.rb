@@ -15,7 +15,6 @@ cask "burrow" do
   desc "Free, open-source native GUI for the Mole CLI"
   homepage "https://github.com/caezium/Burrow"
 
-  depends_on formula: "mole"
   # Homebrew 5.1.11 (May 2026) changed `depends_on macos: :sonoma` from
   # "exactly Sonoma" to "Sonoma or newer" and deprecated the `">= :sonoma"`
   # string form (a hard error under HOMEBREW_DEVELOPER). Branch so both old
