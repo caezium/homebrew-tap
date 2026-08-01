@@ -26,9 +26,11 @@ brew uninstall --cask <name>
 ## Notes
 
 - Cask definitions live in [`Casks/`](Casks); each app's source lives in its own repo.
-- These are currently self-signed pre-1.0 builds (not yet notarized), so the
-  casks clear the Gatekeeper quarantine flag automatically on install. If macOS
-  still blocks an app, right-click it and choose **Open**.
+- Burrow's current cask is Developer ID signed and notarized. It preserves
+  quarantine so Gatekeeper can validate Apple's notarization ticket.
+- Wisp and Nib are currently self-signed pre-1.0 builds, so their casks clear
+  quarantine automatically. If macOS still blocks either app, right-click it
+  and choose **Open**.
 - Issues and feedback belong on the individual app's repo.
 
 ## Adding an app (maintainer note)
