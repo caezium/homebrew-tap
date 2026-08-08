@@ -7,8 +7,8 @@
 #   brew install --cask caezium/tap/nib
 #
 cask "nib" do
-  version "0.2.1"
-  sha256 "d51ff83968a2534d0f1cb1643017e4c7e094c6b58d707a70f50d4d90001ff72f"
+  version "0.2.2"
+  sha256 "c67f6700c34da4b1dd797b4b38d2f93558c65e2cb97adc5da10838bedf54215e"
 
   url "https://github.com/caezium/nib/releases/download/v#{version}/Nib-#{version}.zip"
   name "Nib"
@@ -29,18 +29,9 @@ cask "nib" do
 
   app "Nib.app"
 
-  # Pre-1.0 builds are self-signed (not notarized yet), so clear the quarantine
-  # flag to avoid a Gatekeeper block on first launch. Remove once notarized.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Nib.app"], sudo: false
-  end
-
   uninstall quit: "dev.henryzh.nib"
 
   caveats <<~EOS
-    Nib is an unsigned pre-1.0 build. If macOS still blocks it, right-click the
-    app and choose Open, or run:  xattr -cr "#{appdir}/Nib.app"
-
     Image generation needs a backend: sign in to the Codex CLI to generate free
     on your ChatGPT subscription, or add an OpenRouter API key in Settings.
   EOS
