@@ -1,22 +1,27 @@
 class CcTools < Formula
-  desc "Power-user CLI tools for Claude Code: cc-session + ccron"
+  desc "Claude Code sessions, remote access, schedules, and conversation handoffs"
   homepage "https://github.com/caezium/cc-tools"
-  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "812506f29d14660eecf8f096fe1fd99c88feddd1d6d8cd265eea3a6601e24984"
+  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "0ea0c5fbfb7645755e7658e64624a549a8f9b38169ff37241a11da93fa16835c"
   license "MIT"
 
   depends_on "tmux" # cc-session runs the Claude TUI inside tmux
-  # ccron is pure-stdlib Python 3 (preinstalled on macOS)
+  depends_on "python@3.15"
 
   def install
-    bin.install "bin/cc-tools"
-    bin.install "bin/cc-session"
-    bin.install "bin/cc-remote"
-    bin.install "bin/ccron"
+    libexec.install "bin", "lib"
+    %w[ccron cc-threads].each do |name|
+      inreplace libexec/"bin"/name, "#!/usr/bin/env python3",
+        "#!#{Formula["python@3.15"].opt_bin}/python3.15"
+    end
+    bin.install_symlink Dir[libexec/"bin/*"]
   end
 
   test do
-    assert_match "persistent Claude Code sessions", shell_output("#{bin}/cc-session --help")
-    assert_match "manage the cron jobs", shell_output("#{bin}/ccron --help")
+    assert_match "cc-session", shell_output("#{bin}/cc-session --help")
+    assert_match "ccron", shell_output("#{bin}/ccron --help")
+    assert_match "cc-threads", shell_output("#{bin}/cc-tools list")
+    assert_match "cc-threads", shell_output("#{bin}/cc-tools threads --help")
+    assert_path_exists libexec/"lib/cc_threads/web/index.html"
   end
 end
