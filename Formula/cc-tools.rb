@@ -1,8 +1,8 @@
 class CcTools < Formula
   desc "Claude Code sessions, remote access, schedules, and conversation handoffs"
   homepage "https://github.com/caezium/cc-tools"
-  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "0ea0c5fbfb7645755e7658e64624a549a8f9b38169ff37241a11da93fa16835c"
+  url "https://github.com/caezium/cc-tools/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "cfc9b346bb09f4436f74dd495cd0c3eac04fcd67082306154fd920d02f63a13f"
   license "MIT"
 
   depends_on "tmux" # cc-session runs the Claude TUI inside tmux
